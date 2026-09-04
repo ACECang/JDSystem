@@ -1,0 +1,214 @@
+/**
+ * JDsystem 设计 Token
+ * 主题：深蓝主色 + 青绿点缀（专业简洁风格）
+ * 规则：所有色值/字号/间距/圆角/阴影均通过变量引用，业务代码禁止硬编码。
+ */
+
+:root {
+  /* ---------- 主色 / 品牌色阶（深蓝） ---------- */
+  --color-brand-primary: #1a3b7a; /* 主色：深蓝 */
+  --color-primary-1: #2c52a0; /* hover 态 */
+  --color-primary-2: #12285a; /* active 态 */
+  --color-primary-3: #aebbd8; /* disabled 态 */
+  --color-primary-4: #eef1f8; /* 浅色背景 */
+  --color-primary-5: #4a68ad; /* 备用色阶 */
+  --color-heading-accent: #1a3b7a;
+
+  /* ---------- 点缀色（青绿） ---------- */
+  --color-accent: #00a3a3;
+  --color-accent-text: #00817f;
+  --color-accent-light: #e3f6f6;
+
+  /* ---------- 功能 / 辅助色 ---------- */
+  --color-red: #ff1f1f;
+  --color-orange: #ff7700;
+  --color-green: #00a854;
+  --color-teal: #00a3a3;
+  --color-purple: #882eff;
+  --color-pink: #eb2f93;
+  --color-brown: #9e7549;
+
+  /* ---------- 涨跌 ---------- */
+  --chart-up: #ff1f1f;
+  --chart-down: #00a854;
+
+  /* ---------- 中性色 - 文字 ---------- */
+  --text-1: #111925;
+  --text-2: rgba(17, 25, 37, 0.85);
+  --text-3: rgba(17, 25, 37, 0.65);
+  --text-4: rgba(17, 25, 37, 0.45);
+  --text-5: rgba(17, 25, 37, 0.3);
+  --text-6: rgba(17, 25, 37, 0.2);
+
+  /* ---------- 中性色 - 背景/描边/分割线 ---------- */
+  --bg-page: #f3f4f6;
+  --bg-card: #ffffff;
+  --bg-card-inner: #f8f8f8;
+  --border: rgba(17, 25, 37, 0.15);
+  --divider: rgba(17, 25, 37, 0.1);
+  --bg-nav-dark: #10203f;
+  --mask: rgba(0, 0, 0, 0.5);
+
+  /* ---------- 文字字阶（行高 = 字号 + 8） ---------- */
+  --fs-30: 30px;
+  --lh-30: 38px;
+  --fs-24: 24px;
+  --lh-24: 32px;
+  --fs-20: 20px;
+  --lh-20: 28px;
+  --fs-18: 18px;
+  --lh-18: 26px;
+  --fs-16: 16px;
+  --lh-16: 24px;
+  --fs-14: 14px;
+  --lh-14: 22px;
+  --fs-12: 12px;
+  --lh-12: 20px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ---------- 间距（5 级语义） ---------- */
+  --gap-elem: 8px;
+  --gap-module: 8px;
+  --card-padding: 16px;
+  --gap-section: 24px;
+  --gap-page: 16px;
+  --gutter: 16px;
+
+  /* ---------- 圆角 ---------- */
+  --radius-1: 16px;
+  --radius-2: 10px;
+  --radius-3: 6px;
+  --radius-4: 4px;
+  --radius: var(--radius-3);
+
+  /* ---------- 阴影 ---------- */
+  --shadow-high: 0 13px 39px rgba(0, 0, 0, 0.15);
+  --shadow-mid: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-low: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-min: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-card: var(--shadow-min);
+
+  /* ---------- 导航专用 ---------- */
+  --nav-header-height: 56px;
+  --nav-active-color: var(--color-brand-primary);
+  --nav-active-bg: var(--color-primary-4);
+  --nav-item-color: var(--text-2);
+  --nav-hover-bg: var(--bg-card-inner);
+
+  /* ---------- 图表色板 ---------- */
+  --chart-1: var(--color-brand-primary);
+  --chart-2: #00a854;
+  --chart-3: #ff7700;
+  --chart-4: #00a3a3;
+  --chart-5: #882eff;
+  --chart-6: #eb2f93;
+  --chart-7: #9e7549;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-2);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Microsoft YaHei',
+    SimSun,
+    sans-serif;
+}
+
+/* ---------- 通用工具类 ---------- */
+.dash-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-3);
+  padding: var(--card-padding);
+}
+
+.dash-block {
+  margin-bottom: var(--gap-module);
+}
+
+.dash-title {
+  font-size: var(--fs-16);
+  line-height: var(--lh-16);
+  font-weight: var(--fw-medium);
+  color: var(--text-1);
+}
+
+.dash-subtitle {
+  font-size: var(--fs-12);
+  line-height: var(--lh-12);
+  color: var(--text-3);
+}
+
+.card-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.card-body-area {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.up {
+  color: var(--chart-up);
+}
+.down {
+  color: var(--chart-down);
+}
+
+/* ---------- 同行卡片等高机制（MTD Row 双 class 兼容） ---------- */
+.mtd-prime-row,
+.mtd-prime-row-flex {
+  display: flex;
+  align-items: stretch;
+}
+
+.mtd-prime-row > [class*='mtd-prime-col'],
+.mtd-prime-row-flex > [class*='mtd-prime-col'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.mtd-prime-row > [class*='mtd-prime-col'] > .mtd-prime-card,
+.mtd-prime-row-flex > [class*='mtd-prime-col'] > .mtd-prime-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mtd-prime-row > [class*='mtd-prime-col'] > .mtd-prime-card > .mtd-prime-card-body,
+.mtd-prime-row-flex > [class*='mtd-prime-col'] > .mtd-prime-card > .mtd-prime-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ---------- 隐藏滚动条（保留滚动能力） ---------- */
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
