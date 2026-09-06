@@ -116,7 +116,6 @@ npm run build    # 打包出 dist/，可部署到任意静态服务器
 | --- | --- |
 | ![运行效果](screenshot-workbench.png) | ![模型设置](screenshot-settings.png) |
 
-> 添加示例图：将图片（建议英文命名，如 `demo-xxx.png`）放入仓库根目录，在 README 中以 `![描述](图片名.png)` 引用即可，提交后自动显示。
 
 ---
 
